@@ -19,22 +19,14 @@ class hexaria_bosses:
     def nicole(self): # Nicole function
         x = hexaria_bosses()
         chance,account,time,difficulty = x.input_function()
-        result = 100/(chance * difficulty *account) * time
+        result = 100/(chance * difficulty * account) * time
         print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
 
-    def skeleton_king(self): 
-        x = hexaria_bosses()
-        x.nicole()
-
-    def non_bosses(self): # Non_bosses
+    def non_bosses(self): # Non_bosses function
         x = hexaria_bosses()
         chance,account,time,difficulty = x.input_function()
-        result = 100/(chance * difficulty * 4 *account) * time
+        result = 100/(chance * difficulty * 4 * account) * time
         print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
-
-    def sedrian(self):
-        x = hexaria_bosses()
-        x.nicole()
 
     def roku(self): # roku function
         x = hexaria_bosses()
@@ -42,17 +34,32 @@ class hexaria_bosses:
         result = 100/(chance * account) * time
         print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
 
+    def arcovian_knight(): #arcovian function
+        x = hexaria_bosses()
+        x = chance,account,time,difficulty = x.input_function()
+        if difficulty == 1.0:
+            result = 100/(chance * difficulty* 4 * account) * time
+        elif difficulty == 1.4:
+            result = 100/(chance * difficulty* 2 * account) * time
+        print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
+
     def zombified(self):
         x = hexaria_bosses()
         x.roku()
-    def exit(self):
-        exit()
-hexaria_class = hexaria_bosses() # Class call
 
+    def sedrian(self):
+        x = hexaria_bosses()
+        x.nicole()
+
+    def skeleton_king(self): 
+        x = hexaria_bosses()
+        x.nicole()
+
+hexaria_class = hexaria_bosses() # Class call
 #start of main method
 while(True):
-    print("\nHexaria Boss Item Calculator..?")
-    print("\n[1]Nicole \n[2]Non-Boss Enemies \n[3]Skeleton King \n[4]Sedrian \n[5]Roku \n[6]zombified \n[7]Exit")
+    print("\nHexaria Item Calculator..?")
+    print("\n[1]Nicole \n[2]Non-Boss Enemies \n[3]Skeleton King \n[4]Sedrian \n[5]Roku \n[6]zombified \n[7]Arcovian Knights \n[8]Exit")
     choice = int(input("\nChoose the boss you're grinding at the moment (choose the number): "))
 
     match choice:
@@ -75,6 +82,9 @@ while(True):
             print("Selected: Zombified")
             hexaria_class.zombified()
         case 7:
+            print("Selected: Arcovian Knights")
+            hexaria_class.arcovian_knight()
+        case 8:
             print("Goodbye :>")
-            hexaria_class.exit()
+            exit()
     
