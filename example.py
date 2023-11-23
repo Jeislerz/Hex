@@ -29,12 +29,7 @@ class hexaria_bosses:
     def non_bosses(self): # Non_bosses
         x = hexaria_bosses()
         chance,account,time,difficulty = x.input_function()
-        if account == 1:
-            result = 100/(chance * difficulty * 2 *account) * time
-        elif account == 2:
-            result = 100/(chance * difficulty * 3 *account) * time
-        elif account in [3,4]:
-            result = 100/(chance * difficulty * 4 *account) * time
+        result = 100/(chance * difficulty * 4 *account) * time
         print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
 
     def sedrian(self):
