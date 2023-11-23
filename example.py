@@ -34,8 +34,7 @@ class hexaria_bosses:
         result = 100/(chance * account) * time
         print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
 
-    def arcovian_knight(self7
-                        ): #arcovian function
+    def arcovian_knight(self): #arcovian function
         x = hexaria_bosses()
         x = chance,account,time,difficulty = x.input_function()
         if difficulty == 1.0:
