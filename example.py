@@ -10,7 +10,7 @@ class hexaria_bosses:
         if difficulty_input in ["normal","Normal","N","n"]:
             difficulty = 1.0
         elif difficulty_input in ["elite","Elite","E","e"]:
-            difficulty = 1.41
+            difficulty = 1.4
         else:
             print("Improper input")
             exit()
