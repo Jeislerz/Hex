@@ -1,9 +1,9 @@
 class hexaria_bosses:
 
     def input_function(self): # User Input
-        chance = int(input("Enter Drop Chance: "))
-        account =int(input("Enter how many accounts: "))
-        time = int(input("Enter how many minutes it would take to complete a run: "))
+        chance = int(input("Enter Drop Chance of the item (no need to write %): "))
+        account =int(input("Enter how many accounts are you using: "))
+        time = int(input("what is the Estimate minutes it would take to complete a run: "))
         difficulty_input = input("Is the Difficulty normal or elite?: ")
         difficulty = 0
 
@@ -26,13 +26,15 @@ class hexaria_bosses:
         x = hexaria_bosses()
         x.nicole()
 
-    def arcovian_knight(self): # Arcovian knight function
+    def non_bosses(self): # Non_bosses
         x = hexaria_bosses()
         chance,account,time,difficulty = x.input_function()
-        if difficulty == 1.0:
-            result = 100/(chance * 1.0 * 4 *account) * time
-        elif difficulty == 1.4:
-            result = 100/(chance * 1.4 * 2 *account) * time
+        if account == 1:
+            result = 100/(chance * difficulty * 2 *account) * time
+        elif account == 2:
+            result = 100/(chance * difficulty * 3 *account) * time
+        elif account in [3,4]:
+            result = 100/(chance * difficulty * 4 *account) * time
         print("It would take: {:.0f} Minutes to get 1 item that you are searching for".format(result))
 
     def sedrian(self):
@@ -55,7 +57,7 @@ hexaria_class = hexaria_bosses() # Class call
 #start of main method
 while(True):
     print("\nHexaria Boss Item Calculator..?")
-    print("\n[1]Nicole \n[2]Arcovian Knights \n[3]Skeleton King \n[4]Sedrian \n[5]Roku \n[6]zombified \n[7]Exit")
+    print("\n[1]Nicole \n[2]Non-Boss Enemies \n[3]Skeleton King \n[4]Sedrian \n[5]Roku \n[6]zombified \n[7]Exit")
     choice = int(input("\nChoose the boss you're grinding at the moment: "))
 
     match choice:
@@ -63,8 +65,8 @@ while(True):
             print("Selected: Nicole")
             hexaria_class.nicole()
         case 2:
-            print("Selected: Arcovian Knight")
-            hexaria_class.arcovian_knight()
+            print("Selected: Non Boss Enemy")
+            hexaria_class.non_bosses()
         case 3:
             print("Selected: Skeleton King")
             hexaria_class.skeleton_king()
