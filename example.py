@@ -3,14 +3,14 @@ class hexaria_bosses:
     def input_function(self): # User Input
         chance = int(input("Enter Drop Chance of the item (no need to write %): "))
         account =int(input("Enter how many accounts are you using: "))
-        time = int(input("what is the Estimate minutes it would take to complete a run: "))
+        time = int(input("what is the estimated time in minutes it would take to complete a single battle you're grinding (no need to write: minutes/min): "))
         difficulty_input = input("Is the Difficulty normal or elite?: ")
         difficulty = 0
 
         if difficulty_input in ["normal","Normal","N","n"]:
             difficulty = 1.0
         elif difficulty_input in ["elite","Elite","E","e"]:
-            difficulty = 1.4
+            difficulty = 1.41
         else:
             print("Improper input")
             exit()
@@ -58,7 +58,7 @@ hexaria_class = hexaria_bosses() # Class call
 while(True):
     print("\nHexaria Boss Item Calculator..?")
     print("\n[1]Nicole \n[2]Non-Boss Enemies \n[3]Skeleton King \n[4]Sedrian \n[5]Roku \n[6]zombified \n[7]Exit")
-    choice = int(input("\nChoose the boss you're grinding at the moment: "))
+    choice = int(input("\nChoose the boss you're grinding at the moment (choose the number): "))
 
     match choice:
         case 1:
